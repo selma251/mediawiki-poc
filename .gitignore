@@ -1,0 +1,9 @@
+# Dossiers Docker persistants
+db/
+images/
+
+# Fichier de configuration généré
+LocalSettings.php
+
+# Fichiers système
+*.log
