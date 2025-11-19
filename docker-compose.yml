@@ -1,0 +1,22 @@
+services:
+  mediawiki:
+    image: mediawiki:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./images:/var/www/html/images
+      - ./LocalSettings.php:/var/www/html/LocalSettings.php
+    environment:
+      MEDIAWIKI_SERVER: "http://localhost:8080"
+    depends_on:
+      - db
+
+  db:
+    image: mariadb:latest
+    environment:
+      MYSQL_DATABASE: wikidb
+      MYSQL_USER: wikiuser
+      MYSQL_PASSWORD: wikimdp
+      MYSQL_ROOT_PASSWORD: rootpassword
+    volumes:
+      - ./db:/var/lib/mysql
