@@ -4,6 +4,7 @@ services:
     ports:
       - "8080:80"
     volumes:
+      - ./extensions:/var/www/html/extensions
       - ./images:/var/www/html/images
       - ./LocalSettings.php:/var/www/html/LocalSettings.php
     environment:
@@ -20,3 +21,5 @@ services:
       MYSQL_ROOT_PASSWORD: rootpassword
     volumes:
       - ./db:/var/lib/mysql
+    ports:
+      - "3306:3306"
