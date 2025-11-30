@@ -6,4 +6,4 @@ images/
 LocalSettings.php
 
 # Fichiers système
-*.log
+.env
